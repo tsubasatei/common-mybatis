@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
+    <typeHandlers>
+        <typeHandler handler="com.xt.mybatis.handler.AddressTypeHandler" javaType="com.xt.mybatis.bean.Address"/>
+        <!-- 在数据库中存储枚举值本身 -->
+        <!--<typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="com.xt.mybatis.bean.SeasonEnum"/>-->
+        <!-- 在数据库中仅仅存储枚举值的索引 -->
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="com.xt.mybatis.bean.SeasonEnum"/>
+    </typeHandlers>
+</configuration>
